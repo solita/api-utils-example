@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="fi">
+<head>
+  <meta charset="utf-8">
+  <title>Example-API</title>
+  <link rel="stylesheet" href="r/css/app.css">
+  <link rel="stylesheet" href="r/css/lib/ol.css">
+  <link rel="stylesheet" href="r/css/lib/ol3-layerswitcher.css">
+  <link rel="stylesheet" href="r/css/kartta.css">
+</head>
+<body class="fi" onload="kartta()">
+  <section class="menu">
+      <h2>Example-API</h2>
+      
+      <ul>
+        <li><a onclick="$(document.body).addClass('fi').removeClass('en')">finnish</a></li>
+        <li><a onclick="$(document.body).addClass('en').removeClass('fi')">english</a></li>
+      </ul>
+      
+      <h3 class="fi">Lue ensin</h3>
+      <h3 class="en">Read first</h3>
+      <ul>
+        <li><a href="faq.html">FAQ</a></li>
+        <li class="fi"><a href="changelog.html">Muutokset</a></li>
+        <li class="en"><a href="changelog.html">Changelog</a></li>
+        <li class="fi"><a href="examples.html">Esimerkkejä</a></li>
+        <li class="en"><a href="examples.html">Examples</a></li>
+      </ul>
+      
+      <h3 class="fi">Rajapintaversiot</h3>
+      <h3 class="en">API versions</h3>
+      <ul class="apis">
+        <li><a href="0.1/">v0.1</a></li>
+      </ul>
+      
+      <h3 class="fi">Pikalinkit</h3>
+      <h3 class="en">Quicklinks</h3>
+      <ul class="pikalinkit">
+        <li class="fi"><a href="latest/examples.html">Examples</a></li>
+      </ul>
+  </section>
+  <section class="map">
+    <div id="kartta" class="kartta"></div>
+    <div id="hovertitle" class="ol-popup">
+      <div id="hovertitle-content"></div>
+    </div>
+    <div id="popup" class="ol-popup">
+      <div id="popup-content"></div>
+    </div>
+    <div id="list" class="ol-popup"></div>
+    <div>
+        <div class="ol-control app-button" id="drawPolygon">
+            <button class="fi">Piirrä polygoni</button>
+            <button class="en">Draw polygon</button>
+        </div>
+    </div>
+    <script src="r/js/lib/ol.js"></script>
+    <script src="r/js/lib/proj4.js"></script>
+    <script src="r/js/lib/jquery-2.1.4.min.js"></script>
+    <script src="r/js/lib/ol3-layerswitcher.js"></script>
+    
+    <script src="r/js/constants.js"></script>
+    <script src="r/js/hover.js"></script>
+    <script src="r/js/olstuff.js"></script>
+    <script src="r/js/tilet.js"></script>
+    <script src="r/js/util.js"></script>
+    <script src="r/js/kartta.js"></script>
+    
+    <script type="text/javascript">$(function() { $.get('modified').success(function(data) { $('.modified').append(data); }) });</script>
+  </section>
+</body>
+</html>
